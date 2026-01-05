@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - HARDTEK</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* --- ESTILOS RECOMENDADOS PARA NOSOTROS.HTML --- */
+        /* Mover estos estilos a css/estilos.css para una mejor práctica */
+
+        /* 1. Hero con imagen de fondo */
+        .nosotros-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/nosotros1.png'); /* Asegúrate de tener esta imagen */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 2. Layout para Historia (texto + imagen) */
+        .nosotros-contenido .nosotros-card:first-child {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .historia-texto, .historia-imagen {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .historia-imagen img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 3. Mejoras en tarjetas de valores */
+        .valor-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .valor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .valor-card svg {
+            margin-bottom: 0.75rem;
+            color: var(--primary-color, #007bff); /* Usa el color primario de tu web */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo de HARDTEK">
+                <h1>HARDTEK</h1>
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="carrito.html">Carrito (<span id="carrito-cantidad">0</span>)</a></li>
+               
+                <li class="no-logueado"><a href="login.html">Login</a></li>
+                
+                <li class="logueado" id="saludoUsuario">Bienvenido, <span id="nombreUsuarioLogueado"></span></li>
+                <li class="logueado"><a href="#" id="enlaceCerrarSesion">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="nosotros-hero">
+            <div class="nosotros-hero-content">
+                <h1>Conoce a HARDTEK</h1>
+                <p>Tu aliado en tecnología y rendimiento.</p>
+            </div>
+        </section>
+
+        <section class="nosotros-contenido">
+            <div class="nosotros-card">
+                <div class="historia-texto">
+                    <h2>Nuestra Historia</h2>
+                    <p>La demanda de equipos de cómputo como laptops, computadoras de escritorio, periféricos y componentes internos ha crecido significativamente. En este contexto surge HARDTEK, una empresa enfocada en la comercialización de soluciones tecnológicas accesibles, confiables y actualizadas, pensadas para satisfacer las exigencias del mercado moderno.</p>
+                </div>
+                <div class="historia-imagen">
+                    <img src="img/nosotros2.png" alt="Equipo de HARDTEK trabajando en un entorno moderno"> <!-- Asegúrate de tener esta imagen -->
+                </div>
+            </div>
+
+            <div class="vision-mision-grid">
+                <div class="nosotros-card">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Visión</h3>
+                    <p>Ser reconocidos como una de las principales tiendas en línea especializadas en tecnología y equipos de cómputo en el mercado nacional, posicionándonos como una marca confiable, moderna y enfocada en satisfacer las necesidades de un consumidor digital cada vez más exigente.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Misión</h3>
+                    <p>Ofrecer a nuestros clientes una experiencia de compra en línea confiable, ágil y satisfactoria a través de una plataforma web que destaque por su funcionalidad, seguridad y diseño innovador, brindando acceso a equipos de cómputo tecnológicos de alta calidad, con un servicio personalizado y comprometido con la excelencia.</p>
+                </div>
+            </div>
+
+            <div class="nosotros-valores">
+                <h2>Nuestros Valores</h2>
+                <div class="valores-grid">
+                    <div class="valor-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <h4>Compromiso</h4>
+                        <p>Con el cliente, brindando la mejor atención y soporte.</p>
+                    </div>
+                    <div class="valor-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 17 17 23 15.79 13.88"></polyline></svg>
+                        <h4>Calidad</h4>
+                        <p>En cada producto y servicio que ofrecemos.</p>
+                    </div>
+                    <div class="valor-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                        <h4>Asesoramiento</h4>
+                        <p>Experto y personalizado para cada necesidad.</p>
+                    </div>
+                    <div class="valor-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <h4>Integridad</h4>
+                        <p>Y transparencia en todas nuestras operaciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat en vivo simulado -->
+    <div id="chat-bubble">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+
+    <div id="chat-window">
+        <div class="chat-header">
+            <h3>Asistente Virtual</h3>
+            <button id="close-chat">&times;</button>
+        </div>
+        <div id="chat-messages">
+            <!-- Los mensajes aparecerán aquí -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+            <button id="send-chat-btn">Enviar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <img src="img/logo.png" alt="Logo de HARDTEK" class="footer-logo">
+                <p>Tecnología y rendimiento a tu alcance.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <p><strong>Teléfono:</strong> +51 123 456 789</p>
+                <p><strong>Dirección:</strong> Av. Garcilaso de la Vega 1358, Lima, Perú</p>
+            </div>
+            <div class="footer-column">
+                <h4>Ubicación</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.764933182617!2d-77.03858602568804!3d-12.06018149145875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c7c0e27a75%3A0x7d4c1b9a13a469c!2sAv.%20Garcilaso%20de%20la%20Vega%201358%2C%20Lima%2015001%2C%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1716326488811!5m2!1ses-419!2spe" class="footer-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HARDTEK - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="script.js"></script>
+    <script src="js/chat-sim.js"></script>
+</body>
+</html>

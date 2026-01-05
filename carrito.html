@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - HARDTEK</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+       <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo de HARDTEK">
+                <h1>HARDTEK</h1>
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="carrito.html">Carrito (<span id="carrito-cantidad">0</span>)</a></li>
+               
+                <li class="no-logueado"><a href="login.html">Login</a></li>
+                
+                <li class="logueado" id="saludoUsuario">Bienvenido, <span id="nombreUsuarioLogueado"></span></li>
+                <li class="logueado"><a href="#" id="enlaceCerrarSesion">Cerrar Sesión</a></li>
+                <li class="logueado" id="enlaceAdminPanel" style="display: none;"><a href="admin.html" class="button button-secundario">Panel Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="carrito-page">
+        <section class="carrito-items">
+            <h2>Tu Carrito de Compras</h2>
+            <div class="tabla-carrito-container">
+                <table class="tabla-carrito">
+                    <thead>
+                        <tr>
+                            <th class="th-producto">Producto</th>
+                            <th class="th-cantidad">Cantidad</th>
+                            <th class="th-precio">Precio Unitario</th>
+                            <th class="th-subtotal">Subtotal</th>
+                            <th class="th-accion"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-carrito-body">
+                        <!-- Las filas del carrito se insertarán aquí con JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="acciones-adicionales">
+
+            </div>
+            <div id="carrito-vacio-mensaje" style="display: none; text-align: center; padding: 2em 0;">Tu carrito está vacío.</div>
+        </section>
+
+        <section class="resumen-carrito">
+            <h3>Resumen del Pedido</h3>
+            <p>Subtotal: <span id="subtotal">S/. 0.00</span></p>
+            <p>Envío: <span id="envio">Gratis</span></p>
+            <p class="total">Total: <span id="total">S/. 0.00</span></p>
+            <button class="button button-secundario" id="btn-vaciar-carrito">Vaciar Carrito</button>
+            <a href="registro-compra.html" class="button" id="btn-comprar">Finalizar Compra</a>
+
+        </section>
+    </main>
+
+    <!-- Chat en vivo simulado -->
+    <div id="chat-bubble">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+
+    <div id="chat-window">
+        <div class="chat-header">
+            <h3>Asistente Virtual</h3>
+            <button id="close-chat">&times;</button>
+        </div>
+        <div id="chat-messages">
+            
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+            <button id="send-chat-btn">Enviar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <img src="img/logo.png" alt="Logo de HARDTEK" class="footer-logo">
+                <p>Tecnología y rendimiento a tu alcance.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <p><strong>Teléfono:</strong> +51 123 456 789</p>
+                <p><strong>Dirección:</strong> Av. Garcilaso de la Vega 1358, Lima, Perú</p>
+            </div>
+            <div class="footer-column">
+                <h4>Ubicación</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.764933182617!2d-77.03858602568804!3d-12.06018149145875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c7c0e27a75%3A0x7d4c1b9a13a469c!2sAv.%20Garcilaso%20de%20la%20Vega%201358%2C%20Lima%2015001%2C%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1716326488811!5m2!1ses-419!2spe" class="footer-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HARDTEK - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="script.js"></script> 
+    <script src="js/chat-sim.js"></script>
+</body>
+</html>

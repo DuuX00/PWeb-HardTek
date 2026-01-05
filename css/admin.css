@@ -1,0 +1,132 @@
+/* Estilos para el panel administrativo */
+:root {
+    --admin-bg: #f4f7f6;
+    --card-bg: #fff;
+    --primary-accent: #26b885;
+    --primary-accent-light: rgba(38, 184, 133, 0.2);
+    --text-dark: #333;
+    --text-medium: #555;
+    --border-light: #ddd;
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+.admin-panel {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--admin-bg);
+}
+
+.admin-panel h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+/* Controles para los reportes */
+.report-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border-light);
+    background-color: var(--card-bg);
+    color: var(--text-medium);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-accent);
+    color: #fff;
+    border-color: var(--primary-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+/* Estilos para el nuevo selector de fecha */
+.date-picker-input {
+    padding: 0.5rem 1rem; /* Ligeramente ajustado para inputs */
+    border: 1px solid var(--border-light);
+    background-color: var(--card-bg);
+    color: var(--text-medium);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit; /* Hereda la fuente del body */
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.date-picker-input:focus, .date-picker-input.active {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px var(--primary-accent-light);
+}
+
+/* Tarjetas de resumen */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    border-left: 5px solid var(--primary-accent);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--text-medium);
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin: 0.5rem 0 0;
+}
+
+/* Contenedor de gráficos */
+.charts-container {
+    display: grid;
+    /* Hacemos que los gráficos se ajusten automáticamente al espacio disponible */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.chart-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    /* Definimos una altura para los contenedores de los gráficos para que no sean tan grandes */
+    height: 400px;
+    /* Usamos Flexbox para que el contenido se ajuste verticalmente */
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.chart-wrapper {
+    position: relative; /* Requerido por Chart.js para la responsividad */
+    flex-grow: 1;       /* Hace que este contenedor ocupe el espacio restante */
+    min-height: 0;      /* Un truco de Flexbox para prevenir desbordamientos */
+}
